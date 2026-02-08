@@ -1,46 +1,129 @@
-Agentic AI Customer Retention Decision System
-Problem
+🤖 Agentic AI Customer Retention Decision System
+Overview
 
-Traditional churn models predict who may leave but do not answer what should be done.
-This project builds an Agentic AI decision system that transforms churn risk predictions into reasoned, auditable retention actions for managerial decision-making.
+Traditional churn prediction models identify who is likely to leave but do not answer the more important business question:
+what should be done next.
 
-System Design
+This project implements an Agentic AI decision system that transforms churn risk predictions into reasoned, auditable, and manager-ready retention actions.
+Instead of relying on opaque prompt-based reasoning, the system uses a deterministic multi-agent architecture with explicit responsibilities and internal critique.
 
-The system uses a multi-agent architecture with explicit roles:
+Problem Statement
 
-Analyst Agent – interprets customer data and churn risk
+Customer churn has a direct impact on revenue, yet retention strategies are often applied uniformly or reactively.
+This project addresses the gap between predictive analytics and decision intelligence by designing an AI system that:
 
-Planner Agent – proposes retention strategies based on policy rules
+Interprets churn risk
 
-Critic Agent – validates and moderates decisions to avoid over-intervention
+Proposes retention actions
 
-Explainer Agent – generates manager-friendly decision summaries
+Reviews decisions for business risk
 
-Agents operate in a deterministic, auditable pipeline rather than relying on opaque prompt-based reasoning.
+Explains recommendations in clear managerial language
+
+System Architecture
+
+The system follows a multi-agent pipeline, where each agent has a clearly defined role:
+
+Agent Roles
+
+Analyst Agent
+Interprets customer profile and churn probability to assess risk level.
+
+Planner Agent
+Proposes retention strategies based on explicit business rules and policy thresholds.
+
+Critic Agent
+Reviews and moderates proposed actions to prevent over-intervention and protect revenue.
+
+Explainer Agent
+Generates clear, manager-friendly summaries explaining the final decision, rationale, and confidence.
+
+Agents operate in a fixed, auditable sequence, ensuring transparency and reproducibility.
+
+Customer Data + Churn Risk
+        ↓
+Analyst Agent
+        ↓
+Planner Agent
+        ↓
+Critic Agent
+        ↓
+Explainer Agent
+        ↓
+Manager-Ready Decision Output
 
 Decision Logic
 
-High churn risk (≥ 0.5) triggers proactive retention actions
+High churn risk (≥ 0.5) triggers proactive retention strategies
 
-Business rules ensure revenue-sensitive decision-making
+Business rules ensure revenue-sensitive interventions
 
-Internal critique prevents unnecessary incentives
+Internal critique prevents unnecessary incentives for borderline cases
 
-Output
+Decisions are deterministic and explainable
 
-The system produces:
+This design mirrors real-world decision committees rather than black-box automation.
 
-Risk assessment
+Key Features
 
-Recommended retention actions
+Multi-agent AI architecture with explicit responsibilities
 
-Rationale and confidence level
-Designed explicitly for manager consumption, not raw ML outputs.
+Rule-based decision safety layer
 
-Why Agentic AI
+Internal critique for self-validation
 
-This project demonstrates agent orchestration, self-critique, and explainability, moving beyond single-model predictions to decision intelligence systems.
+Explainable, manager-oriented outputs
+
+Clean modular design suitable for extension with LLMs
+
+User Interface
+
+A minimal Streamlit interface demonstrates the agentic decision flow:
+
+Input churn probability and customer attributes
+
+Generate a full retention decision
+
+View risk assessment, recommended actions, rationale, and confidence
+
+This UI is designed for demonstration and managerial understanding, not model experimentation.
+
+Why Agentic AI?
+
+Unlike single-model or prompt-based systems, this project demonstrates:
+
+Agent orchestration instead of monolithic reasoning
+
+Self-critique and governance logic
+
+Decision intelligence, not just prediction
+
+Explainability by design, not as an afterthought
+
+This aligns with how AI systems are expected to operate in production environments.
 
 Tech Stack
 
-Python · Rule-based reasoning · Modular agent architecture
+Python
+
+Streamlit
+
+Modular agent architecture
+
+Rule-based decision logic
+
+(Designed to be LLM-agnostic and easily extensible)
+
+Intended Audience
+
+Product Managers
+
+Customer Retention Teams
+
+Business Decision-Makers
+
+AI/ML Engineers evaluating agentic system design
+
+Project Positioning
+
+This project is intended as a portfolio-grade demonstration of Agentic AI applied to real business decision-making, emphasizing clarity, accountability, and system design over model novelty.
